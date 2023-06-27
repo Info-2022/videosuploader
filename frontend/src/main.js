@@ -53,8 +53,8 @@ function getUploadingProgress(uploadSize, totalSize) {
 export default async function uploadMedia() {
     try {
         let credentialRequest = {
-            accressKeyId: 'AKIA25CVQLUX3V7T7LIO',
-            secretAccessKey: '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',
+            accressKeyId: '',        // Access key ID here
+            secretAccessKey: '',    // Secret Access key here
             signatureVersion: 'v4',
             region: 'ap-south-1',
             Bucket: 'mp4-avi-uploader'
