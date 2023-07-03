@@ -36,7 +36,7 @@ async function uploadToS3Bucket(stream, credential, cd) {
             cd(getUploadingProgress(progress.loaded, progress.total));
         }).promise();
         console.log("uploadItem=>", uploadItem)
-        alert(`${uploadItem.key} Uploaded successfully to AWS`);
+        alert(`File Uploaded successfully to AWS`);
         return uploadItem;
     }
     catch (error) {
