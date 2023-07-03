@@ -44,7 +44,7 @@ const Home = () => {
                     <>
                         <div>
                             <div className='d-flex justify-content-center align-items-center'>
-                                <input className='form-control mt-4 w-50 align-items-center' type="file" id="fileToUpload" onChange={handlechange} />
+                                <input className='form-control mt-4 w-50 align-items-center' type="file" id="fileToUpload" onChange={handlechange} accept='video/*'/>
                                 <button id="uploadbtn" onClick={uploadMedia}> upload</button>
                             </div>
                             <div id="list">
