@@ -11,11 +11,18 @@ const Home = () => {
         for (let i = 0; i < numberOfVideos; i++) {
             let file = e.target.files[i];
             let blobURL = URL.createObjectURL(file);
-            let video = document.createElement('video');
+           // let video = document.createElement('video');
+             var video;
+            if((file.name.includes(".jpg"))||(file.name.includes(".jpeg"))||(file.name.includes(".png"))||(file.name.includes(".avif"))){
+                video=document.createElement("img")
+            }else{
+                video=document.createElement("video")
+            }
             video.src = blobURL;
             video.style.width = "300px"
             video.style.height = "250px"
             video.style.padding = "10px";
+            video.style.margin="10px";
             video.setAttribute("controls", "")
             const videos = document.getElementById("list");
             videos.appendChild(video);
