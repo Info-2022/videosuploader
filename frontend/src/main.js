@@ -1,9 +1,5 @@
 let isConfigUpdate = false;
 
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
 async function uploadToS3Bucket(stream, credential, cd) {
 
     try {
@@ -26,9 +22,11 @@ async function uploadToS3Bucket(stream, credential, cd) {
             })
         });
 
+        var extent = document.getElementById("fileToUpload").files[0].name;
+        
         let uploadItem = await s3.upload({
             Bucket: credential.Bucket,
-            Key: getRndInteger(100000, 999999) + "",// name for the bucket file
+            Key: extent,// name for the bucket file
             ContentType: document.getElementById("fileToUpload").files[0].type,
             Body: stream
         }).on("httpUploadProgress", function (progress) {
